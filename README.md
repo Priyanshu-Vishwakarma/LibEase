@@ -30,7 +30,7 @@ It removes the need for manual notebooks by automating book issuing, returning, 
 ## Project Structure
 
 The project follows a clean separation of concerns:
-
+```text
 LibEase/
 ├── bin/ # Contains the compiled executable
 ├── build/ # Temporary CMake build files
@@ -51,7 +51,7 @@ LibEase/
 ├── CMakeLists.txt # CMake build configuration
 └── README.md # Project documentation
 
-text
+```
 
 ---
 
@@ -69,34 +69,18 @@ Ensure you have the following installed before starting:
 
 #### 1. Clone the repository
 Download the source code to your machine.
-
 git clone https://github.com/your-username/LibEase.git
 cd LibEase
-
-text
-
 #### 2. Create a build directory
 Keep your project clean by building inside a separate folder.
-
 mkdir build
 cd build
-
-text
-
 #### 3. Generate build files
 Run CMake to configure the project.
-
 cmake ..
-
-text
-
 #### 4. Compile the project
 Build the final executable.
-
 make
-
-text
-
 **Note**: On Windows with MinGW, run `mingw32-make` instead of `make`.
 
 #### 5. Run the application
@@ -104,7 +88,6 @@ Launch LibEase from the binary folder.
 
 ../bin/library
 
-text
 
 ---
 
