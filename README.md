@@ -53,7 +53,10 @@ LibEase/
 ├── CMakeLists.txt       # CMake build configuration
 └── README.md            # Project documentation
 
-# How to Build and Run
+
+---
+
+### How to Build and Run
 This project uses CMake for easy cross-platform compilation.
 Prerequisites
 C++ Compiler (GCC/Clang/MSVC)
