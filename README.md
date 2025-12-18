@@ -30,8 +30,9 @@ It removes the need for manual notebooks by automating book issuing, returning, 
 
 The project follows a clean separation of concerns:
 
+```text
 LibEase/
-├── bin/                 # Contains the compiled executable
+├── bin/                 # Contains the compiled executable (created after build)
 ├── build/               # Temporary CMake build files
 ├── data/                # Persistent storage
 │   ├── books.csv        # Stores: id, title, author, year, status
