@@ -26,6 +26,12 @@ It removes the need for manual notebooks by automating book issuing, returning, 
 * **Robust Updates:** Uses temporary files to safely update records without data corruption.
 * **Formatting:** Includes helper functions for clean UI (banners, spacing, menus).
 
+### Future Improvements
+* Implement a visual GUI.
+* Add an Admin role for managing users.
+* Migrate from CSV to SQL Database (SQLite/MySQL).
+* Add "Due Date" calculation for issued books.
+
 ---
 
 ## Project Structure
@@ -53,10 +59,7 @@ LibEase/
 ├── CMakeLists.txt       # CMake build configuration
 └── README.md            # Project documentation
 
-
----
-
-### How to Build and Run
+ How to Build and Run
 This project uses CMake for easy cross-platform compilation.
 Prerequisites
 C++ Compiler (GCC/Clang/MSVC)
@@ -87,8 +90,4 @@ OOP Design: Uses Encapsulation to protect data within Book and User classes and 
 File Handling: Implements std::fstream for reading/writing. Updates are handled by writing to a temp.csv, deleting the old file, and renaming the temp file to prevent data loss.
 String Manipulation: Custom utilities to handle CSV parsing (replacing spaces with dashes) and table formatting.
 
-# Future Improvements
-xImplement a visual GUI.
-Add an Admin role for managing users.
-Migrate from CSV to SQL Database (SQLite/MySQL).
-Add "Due Date" calculation for issued books.
+
