@@ -1,128 +1,130 @@
- LibEase - C++ Library Management System
+ 
+# LibEase - C++ Library Management System
 
 LibEase is a lightweight, command-line interface (CLI) application designed to streamline library operations. It manages books and members efficiently using Object-Oriented Programming (OOP) principles and persistent CSV file handling.
 
 It removes the need for manual notebooks by automating book issuing, returning, and searching processes.
 
-Key Features
+---
 
-Book Management
+## Key Features
 
-Add Books: Auto-generates unique IDs for every new book.
+### Book Management
+- **Add Books**: Auto-generates unique IDs for every new book.
+- **Search**: Find books instantly by title.
+- **Display**: View all available books in a formatted table.
+- **Issue & Return**: Tracks book status (Borrowed/Available) and updates records in real-time.
 
-Search: Find books instantly by title.
+### User Management & Security
+- **Registration & Login**: Secure member access.
+- **Profile Management**: Edit usernames and passwords.
+- **Encryption**: Passwords are encoded using the ROT13 algorithm before storage.
 
-Display: View all available books in a formatted table.
+### System Architecture
+- **Persistence**: Data is saved in `books.csv` and `members.csv`, ensuring data survives after the program closes.
+- **Robust Updates**: Uses temporary files to safely update records without data corruption.
+- **Formatting**: Includes helper functions for clean UI (banners, spacing, menus).
 
-Issue & Return: Tracks book status (Borrowed/Available) and updates records in real-time.
+---
 
-User Management & Security
-
-Registration & Login: Secure member access.
-
-Profile Management: Edit usernames and passwords.
-
-Encryption: Passwords are encoded using the ROT13 algorithm before storage.
-
-System Architecture
-
-Persistence: Data is saved in books.csv and members.csv, ensuring data survives after the program closes.
-
-Robust Updates: Uses temporary files to safely update records without data corruption.
-
-Formatting: Includes helper functions for clean UI (banners, spacing, menus).
-
-Project Structure
+## Project Structure
 
 The project follows a clean separation of concerns:
 
 LibEase/
-├── bin/                 # Contains the compiled executable
-├── build/               # Temporary CMake build files
-├── data/                # Persistent storage
-│   ├── books.csv        # Stores: id, title, author, year, status
-│   └── members.csv      # Stores: username, encoded_password
-├── include/             # Header files (Declarations)
-│   ├── Auth.hpp         # Auth class
-│   ├── Book.hpp         # Book class
-│   ├── User.hpp         # User class
-│   └── Utils.hpp        # Helper functions
-├── src/                 # Source code (Implementations)
-│   ├── main.cpp         # Entry point
-│   ├── add_book.cpp     # Logic to add books
-│   ├── auth.cpp         # Logic for login/register
-│   ├── utils.cpp        # UI and helper logic
-│   └── ...              # Other feature implementations
-├── CMakeLists.txt       # CMake build configuration
-└── README.md            # Project documentation
+├── bin/ # Contains the compiled executable
+├── build/ # Temporary CMake build files
+├── data/ # Persistent storage
+│ ├── books.csv # Stores: id, title, author, year, status
+│ └── members.csv # Stores: username, encoded_password
+├── include/ # Header files (Declarations)
+│ ├── Auth.hpp # Auth class
+│ ├── Book.hpp # Book class
+│ ├── User.hpp # User class
+│ └── Utils.hpp # Helper functions
+├── src/ # Source code (Implementations)
+│ ├── main.cpp # Entry point
+│ ├── add_book.cpp # Logic to add books
+│ ├── auth.cpp # Logic for login/register
+│ ├── utils.cpp # UI and helper logic
+│ └── ... # Other feature implementations
+├── CMakeLists.txt # CMake build configuration
+└── README.md # Project documentation
 
+text
 
-How to Build and Run
+---
+
+## How to Build and Run
 
 This project uses CMake for seamless cross-platform compilation. Follow the steps below to set it up on your local machine.
 
-Prerequisites
+### Prerequisites
 
 Ensure you have the following installed before starting:
+- C++ Compiler (GCC, Clang, or MSVC)
+- CMake (Version 3.10 or higher)
 
-C++ Compiler (GCC, Clang, or MSVC)
+### Installation Steps
 
-CMake (Version 3.10 or higher)
-
-Installation Steps
-
-Clone the repository
+#### 1. Clone the repository
 Download the source code to your machine.
 
-git clone [https://github.com/your-username/LibEase.git](https://github.com/your-username/LibEase.git)
+git clone https://github.com/your-username/LibEase.git
 cd LibEase
 
+text
 
-Create a build directory
+#### 2. Create a build directory
 Keep your project clean by building inside a separate folder.
 
 mkdir build
 cd build
 
+text
 
-Generate build files
+#### 3. Generate build files
 Run CMake to configure the project.
 
 cmake ..
 
+text
 
-Compile the project
+#### 4. Compile the project
 Build the final executable.
 
 make
 
+text
 
-Note: On Windows with MinGW, run mingw32-make instead of make.
+**Note**: On Windows with MinGW, run `mingw32-make` instead of `make`.
 
-Run the application
+#### 5. Run the application
 Launch LibEase from the binary folder.
 
 ../bin/library
 
+text
 
-Technical Highlights
+---
 
-OOP Design: Uses Encapsulation to protect data within Book and User classes and Abstraction to hide complex file I/O logic from the main menu.
+## Technical Highlights
 
-File Handling: Implements std::fstream for reading/writing. Updates are handled by writing to a temporary file, deleting the old file, and renaming the temporary file to prevent data loss.
+- **OOP Design**: Uses Encapsulation to protect data within Book and User classes and Abstraction to hide complex file I/O logic from the main menu.
+- **File Handling**: Implements `std::fstream` for reading/writing. Updates are handled by writing to a temporary file, deleting the old file, and renaming the temporary file to prevent data loss.
+- **String Manipulation**: Custom utilities to handle CSV parsing (replacing spaces with dashes) and table formatting.
 
-String Manipulation: Custom utilities to handle CSV parsing (replacing spaces with dashes) and table formatting.
+---
 
-Future Improvements
+## Future Improvements
 
-Implement a visual GUI.
+- Implement a visual GUI.
+- Add an Admin role for managing users.
+- Migrate from CSV to SQL Database (SQLite/MySQL).
+- Add "Due Date" calculation for issued books.
 
-Add an Admin role for managing users.
+---
 
-Migrate from CSV to SQL Database (SQLite/MySQL).
-
-Add "Due Date" calculation for issued books.
-
-License
+## License
 
 This project is open-source and free to use for educational purposes.
